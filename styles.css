@@ -23,7 +23,7 @@ a:hover {
 
 /* Section Styles */
 
-.main-nav {
+nav {
   width: 100%;
   background: black;
   min-height: 30px;
@@ -57,7 +57,7 @@ a:hover {
 
 header {
   text-align: center;
-  background: url('images/portland.jpg') no-repeat top center ;
+  background: url('images/forested-road.jpg') no-repeat top center ;
   background-size: cover;
   overflow: hidden;
   padding-top: 60px;
@@ -70,11 +70,15 @@ header .profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid #d6d6d6;
   transition: all .5s;
 }
 header .profile-image:hover {
-  transform: scale(1.2) rotate(5deg);
+  transform: scale(1.2) rotate(3deg);
+}
+header .profile-image:active {
+  transform: scale(1.1) rotate(-2deg);
+  border: 3px solid #368f3a;
 }
 .tag {
   background-color: #efefef;
@@ -85,10 +89,24 @@ header .profile-image:hover {
   margin: 10px auto;
 } 
 .location {
-  background-color: #222;
-  color: yellow;
+  font-weight: bold;
+  background-color: #d6d6d6;
+  /* background-color: #ffeed2; */
+  color: black;
 }
-.card {
+/* for the location icon */
+.loc-icon {
+  display: inline-block;
+  text-indent: -9999px;
+  margin-left: 0px;
+  width: 25px;
+  height: 25px;
+  background-size: 25px 25px;
+  opacity: .55;
+  background-image: url(images/location-icon.svg);
+}
+.card-inline {
+  display: block;
   margin: 30px;
   padding: 20px 40px 40px;
   max-width: 500px;
@@ -98,10 +116,9 @@ header .profile-image:hover {
   border-radius: 6px;
   transition: all .5s;
 }
-.card:hover {
-  border-color: #ff99ff;
+.card-inline:hover {
+  border-color: #368f3a;
 }
-
 ul.skills {
   padding: 0;
   text-align: center;
@@ -110,7 +127,7 @@ ul.skills {
 .skills li {
   border-radius: 6px;
   display: inline-block;
-  background: #ff9904;
+  background: #daa75c;
   color: white;
   padding: 5px 10px;
   margin: 2px;
@@ -119,7 +136,70 @@ ul.skills {
 .skills li:nth-child(odd) {
   background: #0399ff;
 }
-
+.treehouse {
+  color: rgb(0, 204, 0);
+  font-weight: bold;
+}
+/* css code for experience page */
+.card-block {
+  display: block;
+  margin: 30px 20%;
+  padding: 20px 40px 40px;
+  /* max-width: auto; */
+  text-align: left;
+  background: #fff;
+  border-left: 4px solid #ccc;
+  border-radius: 6px;
+  transition: all .5s;
+}
+.card-block:hover {
+  border-color: steelblue;
+}
+.expdate {
+  float: right;
+}
+/* code for interest page */
+.card-block-int1 {
+  position: relative;
+  display: block;
+  margin: 30px 20%;
+  padding: 20px 440px 40px 40px;
+  min-height: 350px;
+  text-align: left;
+  background: #fff;
+  border-left: 4px solid #ccc;
+  border-radius: 6px;
+  transition: all .5s;
+}
+.interest1img {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  float: right;
+  height: 350px;
+}
+.card-block-int2 {
+  position: relative;
+  display: block;
+  margin: 30px 20%;
+  padding: 20px 40px 40px 390px;
+  min-height: 350px;
+  text-align: left;
+  background: #fff;
+  border-right: 4px solid #ccc;
+  border-radius: 6px;
+  transition: all .5s;
+}
+.interest2img {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  float: left;
+  height: 350px;
+}
+.card-block-int1:hover, .card-block-int2:hover {
+  border-color: rgb(212, 163, 99);
+}
 footer {
   width: 100%;
   min-height: 30px;
@@ -150,9 +230,6 @@ a.social {
   background-size: 30px 30px;
   opacity: .4;
   transition: all .5s;
-}
-a.twitter {
-  background-image: url(images/twitter.svg);
 }
 a.linkedin {
   background-image: url(images/linkedin.svg);
